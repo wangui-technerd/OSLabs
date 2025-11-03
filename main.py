@@ -1,7 +1,7 @@
 class PagingSimulation:
     def __init__(self, page_size=128):
         self.PAGE_SIZE = page_size
-        # Page Table: {Page Number (p): Frame Number (f)}
+        # Page Number: Frame Number
         self.page_table = {
             0: 10,
             3: 15,  # Page 3 is in Frame 15
