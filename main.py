@@ -17,7 +17,7 @@ class SimplePagingSimulation:
         print(f"Page Size: {self.PAGE_SIZE} bytes")
         print(f"Logical Pages: {self.logical_pages}")
         print(f"Physical Frames: {self.physical_frames}")
-        # print(f"Page Table: {self.page_table}")
+        print(f"Page Table: {self.page_table}")
 
     def translate_address(self, logical_address):
         page_number = logical_address // self.PAGE_SIZE
@@ -32,7 +32,6 @@ class SimplePagingSimulation:
 
         if page_number not in self.page_table:
             print(f" Page Fault: Page {page_number} not found in memory.")
-            # Check if there’s a free frame
             used_frames = set(self.page_table.values())
             all_frames = set(range(self.physical_frames))
             free_frames = list(all_frames - used_frames)
